@@ -9,6 +9,11 @@ public class WorkInput {
         this.identification = identification;
     }
 
+    public WorkInput(){
+        this.contentBase64 = null;
+        this.identification = null;
+    }
+
     public String getContentBase64() {
         return contentBase64;
     }
