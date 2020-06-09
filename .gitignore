@@ -1,0 +1,10 @@
+*.iml
+.idea
+.gradle
+build
+out
+mqjms*
+derby.log
+core.20200605.181507.16308.0001.dmp
+javacore.20200605.181507.16308.0002.txt
+Snap.20200605.181507.16308.0003.trc

@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=co.com.magudel.jpa.config.JpaRepositoryConfiguration

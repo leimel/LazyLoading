@@ -1,0 +1,7 @@
+dependencies {
+    compile project(":domain-model")
+    compile project(':domain-usecase')
+    compile project(':persistence-jpa-repository')
+
+    compile 'org.springframework:spring-webflux:5.2.6.RELEASE'
+}

@@ -1,0 +1,45 @@
+logging.level.co.com.proteccion: TRACE
+logging.level.org.springframework.http.codec.json: TRACE
+logging.level.root: WARN
+
+spring:
+  jackson:
+    serialization:
+      indent_output: true
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=lazyloading
+    username: postgres
+    password: afiliados
+    driver-class-name: org.postgresql.Driver
+    platform: postgres
+  flyway:
+    enabled: true
+    baseline-version: 1.0
+    baseline-on-migrate: true
+    check-location: false
+    sqlMigrationSuffixes: .sql
+    clean-disabled: false
+    clean-on-validation-error: true
+    schemas: lazyloading
+    locations: classpath:db/migration
+    outOfOrder: false
+  jpa:
+    database: POSTGRESQL
+    open-in-view: false
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          batch_size: 20
+          lob:
+            non_contextual_creation: true
+          cache:
+            use_query_cache: false
+            use_second_level_cache: false
+            use_structured_entries: false
+            use_minimal_puts: false
+        temp:
+          use_jdbc_metadata_defaults: false

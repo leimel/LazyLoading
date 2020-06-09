@@ -1,0 +1,5 @@
+dependencies {
+    compile project(":domain-model")
+    compile 'commons-io:commons-io:2.6'
+    testCompile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.0'
+}

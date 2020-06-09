@@ -1,0 +1,26 @@
+plugins {
+    id "org.springframework.boot" version "2.3.0.RELEASE"
+    id 'io.spring.dependency-management' version '1.0.7.RELEASE'
+}
+
+jar {
+    archiveName = "${baseName}.${extension}"
+}
+
+bootJar {
+    mainClassName = 'co.com.magudel.application.Main'
+    baseName = "lazy-loading"
+}
+
+
+dependencies {
+    compile project(":domain-model")
+    compile project(':domain-usecase')
+    compile project(':persistence-jpa-repository')
+    compile project(':LazyLoading-orchestrator')
+    compile 'org.postgresql:postgresql:42.2.6'
+    compile 'org.springframework.boot:spring-boot-starter-webflux:2.0.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.3.0.RELEASE'
+
+}
+
