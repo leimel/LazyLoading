@@ -32,10 +32,12 @@ public class UseCaseConfiguration {
 
     @Bean
     public Mudanza mudanzaStep(final ReaderService readerService, final RelocationPerformerService relocationService, final WriterService writerService, final TraceabilityRepository traceabilityRepository) {
-        return new ReaderStep(readerService)
+        ReaderStep readerStep = new ReaderStep(readerService);
+        readerStep
                 .linkWith(new RelocationPermormerStep(relocationService))
                 .linkWith(new WriterStep(writerService))
                 .linkWith(new PersistenceStep(traceabilityRepository));
+        return readerStep;
 
     }
 }
